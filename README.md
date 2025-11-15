@@ -29,23 +29,20 @@ Included in the verilog files are two modules, transmitter and receiver. Both mo
 ---
 
 ## Transmitter Ports
-clk: 50 MHz clock signal, works on rising edge of clock.
-data: 8 bit data line, send from lsb to msb.
-send: Send signal, works on **rising** edge of send, rising edge must not rise then fall between 1 clock cycle(20ns)
-out: Serial data line out, idles high.
-sending: Is high while transmitting data, from rising edge of send(start bit starts), to end of last stop bit.
+-`clk`: 50 MHz clock signal, works on rising edge of clock.
+-`data`: 8 bit data line, send from lsb to msb.
+-`send`: Send signal, works on **rising** edge of send, rising edge must not rise then fall between 1 clock cycle(20ns)
+-`out`: Serial data line out, idles high.
+-`sending`: Is high while transmitting data, from rising edge of send(start bit starts), to end of last stop bit.
 
 ---
 
 ## Receiver Ports:
-clk: 50 MHz clock signal, works on rising edge of clock.
-in: Serial data line in, transmission is detected on start bit(input low), sampled every clock cycle.
-    In is read at the center of where each expected data bit is.
-data_out: 8 bit data out
-received: Once data transmission is recieved, send a **rising** edge on this line. 
-          Recieved is set to low whenever packet detected, set to high after last stop bit finishes.
-          Recieved still sends a rising edge even if an error is detected.
-error: Sends a **rising** edge if an error is detected in the parity bit or a stop bit.
+-`clk`: 50 MHz clock signal, works on rising edge of clock.
+-`in`: Serial data line in, transmission is detected on start bit(input low), sampled every clock cycle. In is read at the center of where each expected data bit is.
+-`data_out`: 8 bit data out
+-`received`: Once data transmission is recieved, send a **rising** edge on this line. Recieved is set to low whenever packet detected, set to high after last stop bit finishes. Recieved still sends a rising edge even if an error is detected.
+-`error`: Sends a **rising** edge if an error is detected in the parity bit or a stop bit.
 
 ---
 
