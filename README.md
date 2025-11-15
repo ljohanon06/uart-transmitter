@@ -16,15 +16,15 @@ Included in the verilog files are two modules, transmitter and receiver. Both mo
 - **BAUD:** The baud rate of the code, must be less than clock speed. Default is 9600.Baud rates of 10,000,000 were tested to run cleanly. Uses integer division of clock speed (50,000,000) / baud rate to make counter.
 
 - **PARITY_TYPE:** The parity type of the packet.
- -  `0`: None
- -  `1`: Even
- -  `2`: Odd
- Parities outside of this range go to default value of None. Error is flagged in receiver if parity doesn't match.
+	-  `0`: None
+	-  `1`: Even
+	-  `2`: Odd
+	- Parities outside of this range go to default value of None. Error is flagged in receiver if parity doesn't match.
 
 - **STOP:** The number of stop bits,
- - `0`: 1 stop bit
- - `1`: 2 stop bits
- Default is 1 stop bit
+	- `0`: 1 stop bit
+	- `1`: 2 stop bits
+ 	- Default is 1 stop bit
 
 ---
 
